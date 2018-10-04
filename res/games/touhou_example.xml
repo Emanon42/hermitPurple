@@ -1,0 +1,461 @@
+<!-- JDE format XML example -->
+<jde-content>
+
+    <import file="res/games/test_level/hitboxes.xml" />
+
+    <import file="res/games/test_level/sprites.xml" />
+    
+    <import file="res/games/test_level/player.xml" />
+
+    <import file="res/games/test_level/movements.xml" />
+
+    <import file="res/games/test_level/bullets.xml" />
+
+    <!-- Butterfly horde -->
+
+
+    <!-- Basic waves -->
+
+    <wave
+        name="wave_butterfly_darkblue_clockwise"
+        bullets="8" >
+
+        <bullet-ref ref="butterfly_darkblue" />
+
+        <direction-modifier />
+
+        <direction-modifier
+            acceleration-end="100"
+            acceleration-start="0"
+            rotation-start="-80"
+            rotation-end="-80" />
+    </wave>
+
+    <wave
+        name="wave_butterfly_darkblue_counterclockwise"
+        bullets="8" >
+
+        <bullet-ref ref="butterfly_darkblue" />
+
+        <direction-modifier
+            rotation-end="-160"
+            rotation-start="-160" />
+
+        <direction-modifier
+            acceleration-end="100"
+            acceleration-start="0"
+            rotation-start="80"
+            rotation-end="80" />
+    </wave>
+
+    <wave
+        name="wave_butterfly_green_clockwise"
+        bullets="8" >
+
+        <bullet-ref ref="butterfly_green" />
+
+        <direction-modifier />
+
+        <direction-modifier
+            acceleration-end="100"
+            acceleration-start="0"
+            rotation-start="-80"
+            rotation-end="-80" />
+    </wave>
+
+    <wave
+        name="wave_butterfly_green_counterclockwise"
+        bullets="8" >
+
+        <bullet-ref ref="butterfly_green" />
+
+        <direction-modifier
+            rotation-end="-160"
+            rotation-start="-160" />
+
+        <direction-modifier
+            acceleration-end="100"
+            acceleration-start="0"
+            rotation-start="80"
+            rotation-end="80" />
+    </wave>
+
+    <wave
+        name="wave_butterfly_yellow_clockwise"
+        bullets="8" >
+
+        <bullet-ref ref="butterfly_yellow" />
+
+        <direction-modifier />
+
+        <direction-modifier
+            acceleration-end="100"
+            acceleration-start="0"
+            rotation-start="-80"
+            rotation-end="-80" />
+    </wave>
+
+    <wave
+        name="wave_butterfly_yellow_counterclockwise"
+        bullets="8" >
+
+        <bullet-ref ref="butterfly_yellow" />
+
+        <direction-modifier
+            rotation-end="-160"
+            rotation-start="-160" />
+
+        <direction-modifier
+            acceleration-end="100"
+            acceleration-start="0"
+            rotation-start="80"
+            rotation-end="80" />
+    </wave>
+
+    <!-- Complex waves -->
+
+    <wave
+        name="wave_butterflies_darkblue_clockwise"
+        waves="10" >
+
+        <direction-modifier
+            angle-end="360"
+            angle-start="0" />
+
+        <wave-ref ref="wave_butterfly_darkblue_clockwise" />
+    </wave>
+
+    <wave
+        name="wave_butterflies_darkblue_counterclockwise"
+        waves="10" >
+
+        <direction-modifier
+            angle-end="0"
+            angle-start="360" />
+
+        <wave-ref ref="wave_butterfly_darkblue_counterclockwise" />
+    </wave>
+
+    <wave
+        name="wave_butterflies_green_clockwise"
+        waves="10" >
+
+        <vertex
+            x="60"
+            y="10" />
+
+        <direction-modifier
+            angle-end="360"
+            angle-start="0" />
+
+        <wave-ref ref="wave_butterfly_green_clockwise" />
+    </wave>
+
+    <wave
+        name="wave_butterflies_green_counterclockwise"
+        waves="10" >
+
+        <vertex
+            x="-60"
+            y="10" />
+
+        <direction-modifier
+            angle-end="0"
+            angle-start="360" />
+
+        <wave-ref ref="wave_butterfly_green_counterclockwise" />
+    </wave>
+
+    <wave
+        name="wave_butterflies_yellow_clockwise"
+        waves="10" >
+
+        <vertex
+            x="-120"
+            y="0" />
+
+        <direction-modifier
+            angle-end="360"
+            angle-start="0" />
+
+        <wave-ref ref="wave_butterfly_yellow_clockwise" />
+    </wave>
+
+    <wave
+        name="wave_butterflies_yellow_counterclockwise"
+        waves="10" >
+
+        <vertex
+            x="120"
+            y="0" />
+
+        <direction-modifier
+            angle-end="0"
+            angle-start="360" />
+
+        <wave-ref ref="wave_butterfly_yellow_counterclockwise" />
+    </wave>
+
+    <wave name="horde_butterfly" >
+
+        <direction-modifier />
+
+        <wave-ref ref="wave_butterflies_darkblue_clockwise" />
+
+        <wave-ref ref="wave_butterflies_darkblue_counterclockwise" />
+
+        <wave-ref ref="wave_butterflies_green_clockwise" />
+
+        <wave-ref ref="wave_butterflies_green_counterclockwise" />
+
+        <wave-ref ref="wave_butterflies_yellow_clockwise" />
+
+        <wave-ref ref="wave_butterflies_yellow_counterclockwise" />
+    </wave>
+
+    <enemy
+        name="enemy_butterfly"
+        health="100" >
+
+        <hit-body-ref ref="hit_ghost" />
+
+        <animation name="enemy_butterfly" >
+        	<frame>
+        	     <sprite-ref ref="sprite_ghost" />
+        	     <duration>1000</duration>
+        	</frame>
+        </animation>
+
+        <movement-ref ref="move_ghost_up" />
+
+        <wave-ref ref="horde_butterfly" />
+    </enemy>
+
+        <enemy
+        name="enemy_horizontal"
+        health="100" >
+
+        <hit-body-ref ref="hit_ghost" />
+
+        <animation name="enemy_horizontal" >
+        	<frame>
+        	     <sprite-ref ref="sprite_ghost" />
+        	     <duration>1000</duration>
+        	</frame>
+        </animation>
+
+        <movement-ref ref="move_ghost_up" />
+
+        <wave-ref ref="horde_butterfly" />
+    </enemy>
+
+    <!-- Circular waved horde -->
+
+    <wave
+        name="wave_arc"
+        bullets="4" >
+
+        <bullet-ref ref="arc" />
+
+        <direction-modifier
+            angle-end="22.5"
+            angle-start="0" />
+
+        <direction-modifier />
+
+        <direction-modifier
+            angle-end="-15"
+            angle-start="45" />
+    </wave>
+
+    <wave
+        name="wave_arcs"
+        bullets="12"
+        interval="1000"
+        repeat="-1"
+        time-end="500"
+        time-start="0"
+        waves="12" >
+
+        <direction-modifier
+            angle-end="330"
+            angle-start="0" />
+
+        <wave-ref ref="wave_arc" />
+    </wave>
+
+    <enemy
+        name="enemy_arc"
+        health="100" >
+
+        <hit-body-ref ref="hit_ghost" />
+
+        <animation name="enemy_arc" >
+			<frame>
+        	     <sprite-ref ref="sprite_ghost" />
+        	     <duration>1000</duration>
+        	</frame>
+        </animation>
+
+        <movement-ref ref="butterfly" />
+
+        <wave-ref ref="wave_arcs" />
+    </enemy>
+
+    <!-- Random bullets -->
+
+    <wave
+        name="wave_stamps"
+        bullets="170"
+        exponent="0.5"
+        time-end="3000"
+        time-start="0" >
+
+        <bullet-ref ref="stamp" />
+    </wave>
+
+    <enemy
+        name="enemy_stamps"
+        health="100" >
+
+        <hit-body-ref ref="hit_ghost" />
+
+        <animation name="enemy_stamps" >
+			<frame>
+        	     <sprite-ref ref="sprite_ghost" />
+        	     <duration>1000</duration>
+        	</frame>
+        </animation>
+
+        <movement-ref ref="butterfly" />
+
+        <wave-ref ref="wave_stamps" />
+    </enemy>
+
+    <!-- Acceleration spirals -->
+
+    <wave
+        name="simple_spiral"
+        bullets="5"
+        repeat="-1"
+        interval="1001"
+        time-end="1000"
+        time-start="0" >
+
+        <bullet-ref ref="simple_gray" />
+
+        <direction-modifier
+            angle-end="360"
+            angle-exponent="0.5"
+            angle-start="0" />
+    </wave>
+
+    <wave
+        name="simple_spirals"
+        waves="12" >
+
+        <wave-ref ref="simple_spiral" />
+
+        <direction-modifier
+            angle-end="360"
+            angle-start="0" />
+    </wave>
+
+    <enemy
+        name="enemy_spirals"
+        health="100" >
+
+        <hit-body-ref ref="hit_ghost" />
+
+        <animation name="enemy_spirals" >
+			<frame>
+        	     <sprite-ref ref="sprite_ghost" />
+        	     <duration>1000</duration>
+        	</frame>
+        </animation>
+
+        <movement-ref ref="static" />
+
+        <wave-ref ref="simple_spirals" />
+    </enemy>
+
+    <!-- Game -->
+
+    <game name="blabla" >
+    
+    	<music name="background" file="res/audio/touhou/music/MPP.ogg" />
+
+        <player hit-size="4" cooldown="100" >
+
+            <animation-ref ref="player_back" />
+
+            <animation-ref ref="player_focus" />
+            
+            <animation-ref ref="player_left" />
+            
+            <animation-ref ref="player_right" />
+
+            <vertex
+                x="0"
+                y="100" />
+            
+            <wave-ref ref="reimu_wave" />
+            
+        </player>
+
+        <spawn time="2000" >
+
+            <vertex
+                x="0"
+                y="-100" />
+
+            <enemy-ref ref="enemy_spirals" />
+        </spawn>
+
+        <spawn time="2000" >
+
+            <vertex
+                x="130"
+                y="-140" />
+
+            <enemy-ref ref="enemy_spirals" />
+        </spawn>
+
+        <spawn time="2000" >
+
+            <vertex
+                x="-130"
+                y="-140" />
+
+            <enemy-ref ref="enemy_spirals" />
+        </spawn>
+
+        <spawn time="10000" >
+
+            <vertex
+                x="0"
+                y="-100" />
+
+            <enemy-ref ref="enemy_butterfly" />
+        </spawn>
+
+        <spawn time="16000" >
+
+            <vertex
+                x="0"
+                y="-100" />
+
+            <enemy-ref ref="enemy_stamps" />
+        </spawn>
+
+        <spawn time="20000" >
+
+            <vertex
+                x="0"
+                y="-100" />
+
+            <enemy-ref ref="enemy_arc" />
+        </spawn>
+    </game>
+
+</jde-content>

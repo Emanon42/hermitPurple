@@ -1,0 +1,22 @@
+<jde-content>
+    
+    <hit-body name="hit_ghost" >
+
+        <hit-polygon name="hit_polygon_ghost" >
+
+            <vertex
+                x="16"
+                y="-16" />
+            
+            <vertex
+                x="-16"
+                y="-16" />
+            
+            <vertex
+                x="0"
+                y="16" />
+            
+        </hit-polygon>
+    </hit-body>
+
+</jde-content>

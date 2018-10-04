@@ -1,0 +1,99 @@
+<jde-content>
+
+    <bullet name="arc" >
+    
+    	<sound name="bullet_arc" file="res/audio/touhou/sfx/se_tan00.wav" gain="0.25" />
+
+        <hit-body-ref ref="touhou_bullet_v_shape" />
+
+        <animation name="arc_ref_halfsize">
+            <frame>
+                <sprite-ref ref="touhou_bullet_v_shape_red" />
+                <duration>1000</duration>
+            </frame>
+        </animation>
+
+        <movement-ref ref="arc" />
+    </bullet>
+
+    <bullet name="stamp" >
+    
+    	<sound name="bullet_stamp" file="res/audio/touhou/sfx/se_tan01.wav" gain="0.5" />
+
+        <hit-body-ref ref="touhou_bullet_seal" />
+
+        <animation name="stamp_red_halfsize">
+			<frame>
+                <sprite-ref ref="touhou_bullet_seal_red" />
+                <duration>1000</duration>
+            </frame>
+        </animation>
+
+        <movement-ref ref="random" />
+    </bullet>
+
+    <bullet name="butterfly_darkblue" >
+    
+    	<sound name="bullet_butterfly" file="res/audio/touhou/sfx/se_kira00.wav" gain="0.75" />
+
+        <hit-body-ref ref="touhou_bullet_butterfly" />
+
+        <animation name="butterfly_darkblue">
+			<frame>
+                <sprite-ref ref="touhou_bullet_butterfly_blue" />
+                <duration>1000</duration>
+            </frame>
+        </animation>
+
+        <movement-ref ref="butterfly" />
+    </bullet>
+
+    <bullet name="butterfly_green" >
+    
+    	<sound name="bullet_butterfly" file="res/audio/touhou/sfx/se_kira00.wav" gain="0.5" />
+
+        <hit-body-ref ref="touhou_bullet_butterfly" />
+
+        <animation name="butterfly_green">
+			<frame>
+                <sprite-ref ref="touhou_bullet_butterfly_green" />
+                <duration>1000</duration>
+            </frame>
+        </animation>
+
+        <movement-ref ref="butterfly" />
+    </bullet>
+
+    <bullet name="butterfly_yellow" >
+    
+    	<sound name="bullet_butterfly" file="res/audio/touhou/sfx/se_kira00.wav" gain="0.5" />
+
+        <hit-body-ref ref="touhou_bullet_butterfly" />
+
+        <animation name="butterfly_yellow">
+			<frame>
+                <sprite-ref ref="touhou_bullet_butterfly_yellow" />
+                <duration>1000</duration>
+            </frame>
+        </animation>
+
+        <movement-ref ref="butterfly" />
+    </bullet>
+
+    <bullet name="simple_gray" >
+    
+    	<sound name="bullet_simple_gray" file="res/audio/touhou/sfx/se_tan02.wav" gain="0.5" />
+
+        <hit-body-ref ref="touhou_bullet_eliptic" />
+
+        <animation name="eliptic_gray_halfsize">
+			<frame>
+                <sprite-ref ref="touhou_bullet_eliptic_gray" />
+                <duration>1000</duration>
+            </frame>
+        </animation>
+
+        <movement-ref ref="simple" />
+    </bullet>
+
+</jde-content>

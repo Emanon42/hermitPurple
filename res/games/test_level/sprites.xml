@@ -1,0 +1,31 @@
+<jde-content>
+    
+    <import file="res/sprites/sprites_touhou.xml" />
+    
+    <spritesheet
+        name="enemy_ghost"
+        file="res/sprites/sprite_ghost.png" />
+
+    <sprite
+        name="sprite_ghost"
+        h="40"
+        scaling="1"
+        sheet="enemy_ghost"
+        w="44"
+        x="0"
+        y="0" />
+    
+    <spritesheet
+        name="player_focus"
+        file="res/sprites/sprite_focus.png" />
+
+    <sprite
+        name="sprite_player_focus"
+        h="16"
+        scaling="0.75"
+        sheet="player_focus"
+        w="16"
+        x="0"
+        y="0" />
+
+</jde-content>

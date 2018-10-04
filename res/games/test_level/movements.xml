@@ -1,0 +1,84 @@
+<jde-content>
+
+    <movement name="butterfly" >
+
+        <direction
+            acceleration="30"
+            duration="1500"
+            rotation="80"
+            speed="20" />
+
+        <direction
+            acceleration="-30"
+            speed="-20" />
+    </movement>
+
+    <movement name="arc" >
+
+        <direction
+            acceleration="-800"
+            duration="500"
+            speed="400" />
+
+        <direction
+            acceleration="800"
+            duration="1000"
+            speed="0" />
+
+        <direction
+            acceleration="10"
+            speed="50" />
+    </movement>
+
+    <movement name="random" >
+
+        <direction
+            acceleration="-600"
+            duration="500"
+            random-acceleration-offset="50"
+            random-angle-offset="360"
+            random-speed-offset="40"
+            speed="400" />
+
+        <direction acceleration="600" />
+    </movement>
+
+    <movement name="simple" >
+
+        <direction speed="150" />
+    </movement>
+
+    <movement
+        name="move_ghost_up"
+        look-at-direction="no"
+        spin="0" >
+
+        <direction
+            angle="-90"
+            speed="5" />
+        
+    </movement>
+
+    <movement
+        name="static"
+        look-at-direction="no"
+        spin="0" >
+
+        <direction
+            angle="-90"
+            speed="0" />
+        
+    </movement>
+
+        <movement
+        name="horizontal"
+        look-at-direction="yes"
+        spin="0" >
+
+        <direction
+            angle="180"
+            speed="5" />
+        
+    </movement>
+
+</jde-content>
